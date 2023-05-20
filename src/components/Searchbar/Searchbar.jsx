@@ -35,7 +35,7 @@ export class Searchbar extends Component {
     }
 
     this.props.onSubmit(this.state.imageName);
-    this.resetSearchForm();
+    // this.resetSearchForm();
   };
 
   resetSearchForm = () => {

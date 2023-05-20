@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Container } from './App.styled';
 
 import { Searchbar } from 'components/Searchbar/Searchbar';
-import { pixabayApi, PER_PAGE } from 'components/services/pixabayApi';
+import { pixabayApi, PER_PAGE } from 'pixabayApi';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { Button } from 'components/Button/Button';
 import { Loader } from 'components/Loader/Loader';
