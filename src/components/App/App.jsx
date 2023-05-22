@@ -34,7 +34,7 @@ export class App extends Component {
   searchImages() {
     const { imageName, page } = this.state;
 
-    this.setState({ loading: true, images: [] });
+    this.setState({ loading: true });
 
     pixabayApi(imageName, page)
       .then(data => {
@@ -45,7 +45,10 @@ export class App extends Component {
           return;
         }
 
-        return this.setState({ images: data.hits, totalPage: quantityPage });
+        return this.setState(prevState => ({
+          images: [...prevState.images, ...data.hits],
+          totalPage: quantityPage,
+        }));
       })
       .catch(error => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
